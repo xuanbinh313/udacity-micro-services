@@ -22,7 +22,7 @@ jobs:
             docker tag udagram-api-feed xuanbinh313/udagram-api-feed:v1
 
             docker build -t udagram-frontend ./udagram-frontend
-            docker tag udagram-api-feed xuanbinh313/udagram-frontend:v1
+            docker tag udagram-frontend xuanbinh313/udagram-frontend:v1
 
             docker build -t udagram-reverseproxy ./udagram-reverseproxy
             docker tag udagram-reverseproxy xuanbinh313/udagram-reverseproxy:v1
@@ -33,8 +33,8 @@ jobs:
             docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
             docker push xuanbinh313/udagram-api-user:v1
             docker push xuanbinh313/udagram-api-feed:v1
-            docker push xuanbinh313/udagram-api-frontend:v1
-            docker push xuanbinh313/udagram-api-reverseproxy:v1
+            docker push xuanbinh313/udagram-frontend:v1
+            docker push xuanbinh313/udagram-reverseproxy:v1
 
 workflows:
   version: 2
