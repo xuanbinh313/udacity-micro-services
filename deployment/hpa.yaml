@@ -1,0 +1,13 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: hpa-backend-user
+  namespace: default
+spec:
+  scaleTargetRef:
+      kind: Deployment
+      name: backend-user
+      apiVersion: apps/v1
+  minReplicas: 2
+  maxReplicas: 3
+  targetCPUUtilizationPercentage: 50
